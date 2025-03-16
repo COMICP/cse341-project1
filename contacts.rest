@@ -1,1 +1,128 @@
 https://cse341-project1-lnyf.onrender.com/contacts
+
+HTTP/1.1 200 OK
+Date: Sat, 15 Mar 2025 23:48:09 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+etag: W/"1c0-hOtFi/4U39quYPQJF2PD+/oXyNc"
+rndr-id: dab1a2db-9aa8-4115
+vary: Accept-Encoding
+x-powered-by: Express
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 920fe5e49aee396d-IAD
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400
+
+[
+  {
+    "_id": "67cb86bea261a6bd39fb3806",
+    "firstName": "jaden",
+    "lastName": "Binette",
+    "email": "test@gmail.com",
+    "favoriteColor": "thing",
+    "birthday": "25/12/2003"
+  },
+  {
+    "_id": "67cb8775a261a6bd39fb3807",
+    "firstName": "Mark",
+    "lastName": "Hammel",
+    "email": "thing@gmail.com",
+    "favoriteColor": "black",
+    "birthday": "25/12/2000"
+  },
+  {
+    "_id": "67cb87aca261a6bd39fb3808",
+    "firstName": "Pam",
+    "lastName": "Bondie",
+    "email": "test6@gmail.com",
+    "favoriteColor": "asdfasdf",
+    "birthday": "25/12/1995"
+  }
+]
+###Localhost
+GET http://localhost:3000/contacts
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 448
+ETag: W/"1c0-hOtFi/4U39quYPQJF2PD+/oXyNc"
+Date: Sat, 15 Mar 2025 23:53:51 GMT
+Connection: close
+
+[
+  {
+    "_id": "67cb86bea261a6bd39fb3806",
+    "firstName": "jaden",
+    "lastName": "Binette",
+    "email": "test@gmail.com",
+    "favoriteColor": "thing",
+    "birthday": "25/12/2003"
+  },
+  {
+    "_id": "67cb8775a261a6bd39fb3807",
+    "firstName": "Mark",
+    "lastName": "Hammel",
+    "email": "thing@gmail.com",
+    "favoriteColor": "black",
+    "birthday": "25/12/2000"
+  },
+  {
+    "_id": "67cb87aca261a6bd39fb3808",
+    "firstName": "Pam",
+    "lastName": "Bondie",
+    "email": "test6@gmail.com",
+    "favoriteColor": "asdfasdf",
+    "birthday": "25/12/1995"
+  }
+]
+###specific contact
+GET http://localhost:3000/contacts/67cb86bea261a6bd39fb3806
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 150
+ETag: W/"96-KSIMEKA9nJ2VCugZ8dlupHyXt9A"
+Date: Sat, 15 Mar 2025 23:54:05 GMT
+Connection: close
+
+[
+  {
+    "_id": "67cb86bea261a6bd39fb3806",
+    "firstName": "jaden",
+    "lastName": "Binette",
+    "email": "test@gmail.com",
+    "favoriteColor": "thing",
+    "birthday": "25/12/2003"
+  }
+]
+
+###Update contact
+PUT  http://localhost:3000/contacts/67cb86bea261a6bd39fb3806 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "jaden",
+    "lastName": "Binette",
+    "email": "test@email.com",
+    "favoriteColor": "thing",
+    "birthday": "25/12/2003"
+}
+
+### Create Contact
+POST  http://localhost:3000/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "asfdghre",
+    "lastName": "Binette",
+    "email": "test@email.com",
+    "favoriteColor": "thing",
+    "birthday": "25/12/2003"
+}
+###delete
+DELETE http://localhost:3000/contacts/67d6203bcb1bb2e905abe5b9 HTTP/1.1
