@@ -5,8 +5,20 @@ const mongodb = require("./data/database");
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use("/", require("./routes"));
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, 2-Key"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
+app.use("/", require("./routes"));
 
 mongodb.initDB((err) => {
   if (err) {
